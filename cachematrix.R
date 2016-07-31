@@ -1,16 +1,18 @@
-## This pair of functions work together to enable the caching of the calculating of the inverst of a matrix.
-## First makeCacheMatrix creates a special type of matrix which caches it's inverse.  cacheSolve can be run to check if the inverse
-## calculation has already been cached.  If so, it returns the cached inverse.  If not, it calculates the inverse and updates the
-## cached inverse in the special makeCacheMatrix matrix.
+## This pair of functions work together to enable the caching of the calculation of the inverse of a matrix.
+## First makeCacheMatrix creates a special type of matrix which caches it's inverse.  Then, cacheSolve can be run to check if the 
+## inverse calculation has already been cached.  If so, (and the matrix hasn't changed) it returns the cached inverse.  
+## If the inverse has not been calculated, cacheSolve calculates it and updates the cached inverse in the special 
+## makeCacheMatrix matrix.
 ## 
-## Assumptions:  These functions assumes that the matrix
+## Assumptions:  These functions assumes that the matrix is invertible.
 
 ## 
 ## Attributions:  These two functions represent just minor modifcations of the makeVector and cachemean functions created by R. Peng 
 ##                for the "Coursera Programming in R Course" Assignment 2.
-##                The descriptions of what these functions do is largely based on the assignment text written by R.Peng
+##                The descriptions of what these functions do is largely based on the assignment text written by R.Peng.
 ##                The coding of this assignment was made possilbe thanks to the excellend explanation of the makeVector and cachemean 
-##                functions posted by Leonard Greski on the disucssion board for this assignment
+##                functions posted by Leonard Greski on the disucssion board for this assignment.
+##                These code stubs are forked from https://github.com/rpeng/ProgrammingAssignment2
 
 
 
