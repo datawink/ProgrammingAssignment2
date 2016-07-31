@@ -5,11 +5,14 @@
 
 ## 
 ## Attributions:  These two functions represent just minor modifcations of the makeVector and cachemean functions created by R. Peng 
-##                for the Coursera Programming in R Course
+##                for the "Coursera Programming in R Course" Assignment 2
 ##                The coding of this assignment was made possilbe thanks to the excellend explanation of the makeVector and cachemean 
 ##                functions posted by Leonard Greski on the disucssion board for this assignment
 
-## Write a short comment describing this function
+
+
+## makeCacheMatrix creates a special matrix which caxhes it's onw inverse.
+## This funciton establishes "getters" and "setters" to access both the matrix itself and its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
 
