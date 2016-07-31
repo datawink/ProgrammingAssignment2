@@ -49,12 +49,12 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
       i <- x$getInv()                         ##Attempt to retrieve the cached inverse.
       
-      if(!is.null(i)) {                       ##If the inverse exists (it's not NULL), retrieve it.
+      if(!is.null(i)) {                       ##If the inverse exists (it's not NULL), retrieve it and return it.
         message("getting cached inverse")
         return(i)
       }
  
-      tempMatrix <- x$get()                   ##if the inverse doesn't already exist, we need to calculate it.
+      tempMatrix <- x$get()                   ##otherwise, if the inverse doesn't already exist, we need to calculate it.
       i <- solve(tempMatrix,,,,)
       x$setInv(i)
       i                                       ##return the inverse
