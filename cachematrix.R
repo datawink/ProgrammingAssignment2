@@ -21,17 +21,17 @@
 
 makeCacheMatrix <- function(x = matrix()) {   
 
-      i <- NULL                                   #initialize the inverse to NULL to start
+      i <- NULL                                   ##initialize the inverse to NULL to start
   
-      set <- function(y = matrix()) {             #function for setting a new matrix
+      set <- function(y = matrix()) {             ##function for setting a new matrix
         x <<- y
         i <<- NULL
       }
   
-      get <- function() x                         #function for returning the matrix
-      setInv <- function(inv) i <<- inv           #function for setting the inverse
-      getInv <- function() i                      #function to retrieve the cached inverse
-      list(set = set,                             #the list of references to the get/set functions is returned
+      get <- function() x                         ##function for returning the matrix
+      setInv <- function(inv) i <<- inv           ##function for setting the inverse
+      getInv <- function() i                      ##function to retrieve the cached inverse
+      list(set = set,                             ##the list of references to the get/set functions is returned
            get = get,
            setInv = setInv,
            getInv = getInv)
@@ -47,15 +47,15 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve returns a matrix that is the inverse of 'x'
 
 cacheSolve <- function(x, ...) {
-      i <- x$getInv()                         #Attempt to retrieve the cached inverse.
+      i <- x$getInv()                         ##Attempt to retrieve the cached inverse.
       
-      if(!is.null(i)) {                       #If the inverse exists (it's not NULL), retrieve it.
+      if(!is.null(i)) {                       ##If the inverse exists (it's not NULL), retrieve it.
         message("getting cached inverse")
         return(i)
       }
  
-      tempMatrix <- x$get()                   #if the inverse doesn't already exist, we need to calculate it.
+      tempMatrix <- x$get()                   ##if the inverse doesn't already exist, we need to calculate it.
       i <- solve(tempMatrix,,,,)
       x$setInv(i)
-      i                                       #return the inverse
+      i                                       ##return the inverse
 }
